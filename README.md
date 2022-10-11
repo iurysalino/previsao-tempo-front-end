@@ -8,10 +8,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Stack
 
-🖱 VsCode <\br>
-🖱 Node.js 16.17.1 LTS <\br>
-🖱 Angular Material <\br>
-🖱 Bootstrap <\br>
+🖱 VsCode </br>
+🖱 Node.js 16.17.1 LTS </br>
+🖱 Angular Material </br>
+🖱 Bootstrap </br>
 
 ## EndPoint
 
