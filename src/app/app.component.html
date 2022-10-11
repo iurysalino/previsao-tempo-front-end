@@ -3,37 +3,42 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<div class="container search-table">
-            <div class="search-box">
-                <div class="row">
-                    <div class="col-md-9">
-                        <input type="text"
-                        id="myInput"
-                        class="form-control"
-                        [formControl]="queryField"
-                        placeholder="Digite a Cidade, ex.: Rio de Janeiro">
-                    </div>
-                    <div class="col-auto">
-                      <button class="but btn-lg btn-sucess" (click)="getRoots()">Pesquisar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="search-list">
-              <h3>Clima</h3>
-              <table class="table" id="myTable">
-                  <thead>
-                      <tr >
-                          <th>Temperatura</th>
-                          <th>Temperatura Máxima</th>
-                          <th>Temperatura Mínima</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                  <tr >
-                      <td></td>
-                      <td></td>
-                  </tr>
-                  </tbody>
-              </table>
-          </div>
+<div>
+  <p>
+    <mat-toolbar>
+      <span>Clima Na Minha Cidade API</span>
+      <div class="col-md-9">
+        <input type="text"
+        id="myInput"
+        class="form-control"
+        [formControl]="queryField"
+        placeholder="Digite a Cidade, ex.: Rio de Janeiro">
+    </div>
+    <div class="example-button-container">
+      <button mat-fab color="primary" aria-label="Example icon button with a bookmark icon"
+      (click)="getRoots()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+    </mat-toolbar>
+  </p>
 </div>
+<div class="container search-table">
+              <mat-card class="example-card" *ngFor="let responseWeather of listWeather">
+                <mat-card-header>
+                  <img mat-card-avatar src="assets/img/app-de-clima.png" alt="">
+                  <mat-card-title *ngFor="let response of listResponse">{{(response.name)}}</mat-card-title>
+                  <mat-card-subtitle *ngFor="let response of listResponse">{{(response.main.temp)}}º</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                <mat-card-title-group *ngFor="let response of listResponse">
+                  <mat-card-subtitle>Máxima {{(response.main.temp_max)}}º</mat-card-subtitle>
+                  <mat-card-subtitle>Minima {{(response.main.temp_min)}}º</mat-card-subtitle>
+                  <mat-card-subtitle>Ventos {{(response.wind.speed)}} Km/h</mat-card-subtitle>
+                  <mat-card-subtitle>Umidade de {{(response.main.humidity)}}%</mat-card-subtitle>
+                  <mat-card-subtitle> {{(responseWeather.description)}}</mat-card-subtitle>
+                </mat-card-title-group>
+              </mat-card-content>
+              </mat-card>
+              <label></label>
+            </div>

@@ -1,6 +1,8 @@
 .search-table{
   padding: 10%;
   margin-top: -6%;
+  border: none;
+  border-color: #eee;
 }
 .search-box{
   //background: #c1c1c1;
@@ -22,8 +24,27 @@
   margin-bottom: 0%;
 }
 
-.btn-sucess{
-  background-color: #00695C;
-  color: #fff;
-  border-color: #00695C;
+#myInput{
+  display: flex;
+  flex-flow: column wrap;
+  align-content: flex-end;
+  border-radius: 20px;
+  height: 50px;
+  width: 30%;
+}
+
+.form-control{
+  display: flex;
+  flex-flow: column wrap;
+  align-content: flex-end;
+  margin-left: 70%;
+}
+
+.example-card {
+  max-width: 90%;
+  align-content: center;
+}
+
+.example-header-image {
+  background-size: cover;
 }

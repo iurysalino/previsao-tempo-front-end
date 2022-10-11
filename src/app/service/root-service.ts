@@ -21,6 +21,6 @@ httpOptions = {
 
 // Obter Informações Clima
 getRoot(cityName: any): Observable<Root>{
-    return this.httpClient.get<Root>(this.url+cityName+"&appid="+this.apiKey);
+    return this.httpClient.get<Root>(this.url+cityName+"&appid="+this.apiKey+"&units=metric"+"&lang=pt_br");
 }
 }
